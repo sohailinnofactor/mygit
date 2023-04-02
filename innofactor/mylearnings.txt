@@ -18,3 +18,4 @@ git commit -m "new"
 git status
 git remote -v
 git push --set-upstream origin branchname
+my updates
