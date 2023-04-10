@@ -950,3 +950,13 @@ terraform with azure
 
 az login
 az acount list
+
+---------------------------------------------------------------------------
+
+backend as azure storage account
+
+write code to create rg, storage account, container, backend<key parameter in backend is the name of tfsate>
+
+terraform init -migrate-state
+terraform plam -out myplan
+terraform apply myplan
