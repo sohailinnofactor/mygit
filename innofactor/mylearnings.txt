@@ -30,3 +30,95 @@ add files
 git add .
 git commit -m "msg"
 git push -u<set upstream> -f origin branchname
+
+-----------------------------------------------------------------------------------
+
+to authenticate azure account throgh service principle
+
+1. go to aad-->apps registration and create new app
+2. goto app-->client secret and create a secret key
+3. add below variables to your enviroment 
+4. now the cli is authenticated with service principle
+
+setx ARM_CLIENT_ID e452ee45-b7ac-4aec-84ff-1df79f604244
+setx ARM_CLIENT_SECRET 60q8Q~~06jvOGz~tlNiVdkPO4Vf6ERngshUq4akC
+setx ARM_TENANT_ID 67481c72-d897-4db4-a7fa-b96d76dfb545
+setx ARM_SUBSCRIPTION_ID 4cce77b1-65bc-4255-9570-07178450d61f
+
+terraform state show azurerm_resource_group.rg
+
+setx CLIENT_ID 27315e8d-9288-4294-ad5c-d12a5a476925
+setx CLIENT_SECRET mHO8Q~yXrPHerHqSwmtEzEDiwcT1fnAYFnzKOb9U
+setx TENANT_ID 67481c72-d897-4db4-a7fa-b96d76dfb545
+
+setx ARM_CLIENT_ID 918740f3-9135-4574-ab18-8d07eac8d057
+setx ARM_CLIENT_SECRET 8t_8Q~LX99mcXn8s~XzrWtzGaKhrHZmsqMI~falo
+setx ARM_TENANT_ID 67481c72-d897-4db4-a7fa-b96d76dfb545
+setx ARM_SUBSCRIPTION_ID 4cce77b1-65bc-4255-9570-07178450d61f
+
+---------------------------------------------------------------------
+
+azure devops pipeline yaml file for terraform 
+
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+# name: $(BuildDefinitionName)_$(date:yyyyMMdd)$(rev:.r)
+
+variables:
+ - group: terraformvars
+  
+# Only run against develop
+#trigger: none
+
+pool: 
+  vmImage: 'ubuntu-latest'
+
+# Don't run against PRs
+# pr: none
+
+stages :
+  - stage: validate
+    jobs:
+    - job: validate
+      continueOnError: false
+      steps:
+      - task: Bash@3
+        displayName: Terraform Init
+        env:            
+         ARM_CLIENT_ID: $(ARM_CLIENT_ID)
+         ARM_CLIENT_SECRET: $(ARM_CLIENT_SECRET)              
+         ARM_TENANT_ID: $(ARM_TENANT_ID)
+        inputs:
+          workingDirectory: '$(System.DefaultWorkingDirectory)'          
+          targetType: 'inline'
+          script: |
+            terraform init
+            
+  
+      - task: Bash@3
+        displayName: Terraform Apply
+        env:            
+         ARM_CLIENT_ID: $(ARM_CLIENT_ID)
+         ARM_CLIENT_SECRET: $(ARM_CLIENT_SECRET)              
+         ARM_TENANT_ID: $(ARM_TENANT_ID)
+        inputs:      
+          workingDirectory: '$(System.DefaultWorkingDirectory)<working directory in repo>'
+          targetType: 'inline'
+          script: |
+            terraform apply -auto-approve
+
+1. create github and arm service connection in devops project settings
+2. create variable group in pipeline library
+3. install self hosted agent and configure it
+
+
+913d618e-5bd9-437a-9245-9c258daf820a
+DVh8Q~_ZDnu3_QPWbOHUKZhC66KQ0EMlafcbocPB
+67481c72-d897-4db4-a7fa-b96d76dfb545
+
