@@ -1,0 +1,15 @@
+topics to be deep dive in
+
+DC and DNS architecture - Aidan
+Cost mgnt 
+bastion host
+update management+tags
+hub and spoke
+s2s vpn
+log analytics workspace+queries
+Azure FW 
+Azure migrate
+WAF
+AKV
+Application insight
+
