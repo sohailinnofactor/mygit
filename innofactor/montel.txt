@@ -12,4 +12,8 @@ Azure migrate
 WAF
 AKV
 Application insight
+Azure Arc
+Monitoring
+private and service endpoints
+
 
