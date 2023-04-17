@@ -2,7 +2,24 @@ topics to be deep dive in
 
 DC and DNS architecture - Aidan
 Cost mgnt 
+
+-------------------------------------------------------------------------------------------------
+
 bastion host
+
+use case is to have bastion host with public ip and then bastion host connect to vm inside private subnet so that
+private vm's are not exposed to internet 
+it required dedicated subnet with name AzureBastionSubnet /26 
+understand bastion host to vm auth and connectivity in details??
+
+command to check list of sku's in specific region
+
+az vm list-skus --location eastus --size Standard_D --all --output table
+
+
+
+
+------------------------------------------------------------------------------------
 update management+tags
 hub and spoke
 s2s vpn
@@ -15,5 +32,7 @@ Application insight
 Azure Arc
 Monitoring
 private and service endpoints
+policy
+access policy
 
 
