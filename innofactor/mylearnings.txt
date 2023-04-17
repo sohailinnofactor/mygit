@@ -122,3 +122,27 @@ stages :
 DVh8Q~_ZDnu3_QPWbOHUKZhC66KQ0EMlafcbocPB
 67481c72-d897-4db4-a7fa-b96d76dfb545
 
+
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------
+
+Finally sab chal gaya :) ye procedure rahega to run devops pipeline
+
+1. code likho
+2. azure git repo banao and usko clone karlo(set origin karke b push kar sakte hai)
+3. code push karlo
+4. service priciple create karlo and uska info as variable group devops pipeline
+library me add karlo
+
+https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/service_principal_client_secret
+
+setx ARM_CLIENT_ID 2ea0486b-cbf1-4d49-a883-7e36f2e87a7c
+setx ARM_CLIENT_SECRET Klp8Q~87p9uSgV2pizwvFatmdwBLNv3NHlhZ5c7f
+setx ARM_TENANT_ID 67481c72-d897-4db4-a7fa-b96d76dfb545
+setx ARM_SUBSCRIPTION_ID 4cce77b1-65bc-4255-9570-07178450d61f
+
+--------------------------------------------------------------
+
+terraform state list | findstr "vm"
+
