@@ -16,7 +16,9 @@ command to check list of sku's in specific region
 
 az vm list-skus --location eastus --size Standard_D --all --output table
 
-
+can be deployed in VMSS
+it has to be in same tenant id because end clients can't see bastion from another tenant
+peering conection with other vnet can extend the connectivity 
 
 
 ------------------------------------------------------------------------------------
