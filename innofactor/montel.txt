@@ -1,7 +1,8 @@
 topics to be deep dive in
 
 DC and DNS architecture - Aidan
-Cost mgnt 
+network architecture
+
 
 -------------------------------------------------------------------------------------------------
 
@@ -23,18 +24,83 @@ peering conection with other vnet can extend the connectivity
 
 ------------------------------------------------------------------------------------
 update management+tags
+Cost mgnt 
+-----------------------------------------------------------------------------------
+
 hub and spoke
+
+hub : p-we1net
+hubvnet: p-we1net-network-vnet
+
+spoke : p-nwsadm
+spokevnet : p-nwsadm-network-vnet
+
+peering connection needs to be both ways so that traffic can flow bi-directional
+
+eagress traffic from from nic to internet
+
+nic->nsg(outbound)->subnet->RT->FW->application rule collection->internet -- statefull connection
+
+ingress traffic from internet to nic
+
+internet->waf->AAGW->listner->backend pool->FQDN\ip->??
+
+how AAGW is talking to backend pool vm\app service?
+why managed identity is required in AAGW?
+
+eagress traffic from nic to interanet
+
+source nic->nsg(outbound)->subnet->RT->FW->network rule collection->nsg(inbound)->subnet->destination nic
+
+Ingress traffic from interanet to nic
+
+destination nic->nsg(outbound)->subnet->RT->FW->network rule collection->nsg(inbound)->subnet->source nic
+
+
+---------------------------------------------------------------------------------------------
+
+
 s2s vpn
+
+--------------------------------------------------------------------------------------------
+
 log analytics workspace+queries
+
+| where SourceIP contains "10.100.10.229"
+| where Action contains "allow"
+
+----------------------------------------------------------------------------------------------
 Azure FW 
+
+
+
+----------------------------------------------------------------------------------------------
 Azure migrate
 WAF
 AKV
 Application insight
 Azure Arc
-Monitoring
+
+-----------------------------------------------------------------------------------------------
+
+Monitor
+-shared dashboard
+-azure workload
+-MS monitoring agent
+
+-----------------------------------------------------------------------------------------------
 private and service endpoints
 policy
 access policy
+shared dashboard
+azure workload
+self hosted vs azure cloud agent for devops
+application proxy
+managed identity
+
+MS defender
+Azure App Services
+Azure funtions apps
+
 
 
