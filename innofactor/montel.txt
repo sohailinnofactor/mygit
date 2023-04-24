@@ -39,23 +39,24 @@ peering connection needs to be both ways so that traffic can flow bi-directional
 
 eagress traffic from from nic to internet
 
-nic->nsg(outbound)->subnet->RT->FW->application rule collection->internet -- statefull connection
+nic->nsg(outbound)->subnet->RT->FW(virtual appliance)->application rule collection->internet -- statefull connection
 
 ingress traffic from internet to nic
 
-internet->waf->AAGW->listner->backend pool->FQDN\ip->??
+internet->waf->AAGW->listner->backend pool->FQDN\URI
 
 how AAGW is talking to backend pool vm\app service?
 why managed identity is required in AAGW?
 
 eagress traffic from nic to interanet
 
-source nic->nsg(outbound)->subnet->RT->FW->network rule collection->nsg(inbound)->subnet->destination nic
+source nic->nsg(outbound)->subnet(NSG)->RT->FW(virtual appliance)->network rule collection->nsg(inbound)->subnet->destination nic
 
 Ingress traffic from interanet to nic
 
 destination nic->nsg(outbound)->subnet->RT->FW->network rule collection->nsg(inbound)->subnet->source nic
 
+CIDR decision?
 
 ---------------------------------------------------------------------------------------------
 
@@ -101,6 +102,13 @@ managed identity
 MS defender
 Azure App Services
 Azure funtions apps
+network watcher
+light house
+
+
+connection monitring
+law saved quesries
+resource graph explorer
 
 
 
