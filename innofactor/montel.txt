@@ -58,6 +58,10 @@ destination nic->nsg(outbound)->subnet->RT->FW->network rule collection->nsg(inb
 
 CIDR decision?
 
+address space is registered in 
+
+https://dev.azure.com/montel/Azure%20VDC/_git/p-net?path=/docs/WE1%20IP%20Address%20Usage.md
+
 ---------------------------------------------------------------------------------------------
 
 
@@ -100,7 +104,19 @@ application proxy
 managed identity
 
 MS defender
+
+---------------------------------------------------------------------------------------
+
 Azure App Services
+
+flow to deploy app service\function
+
+subscription
+RG
+app service plan
+
+
+---------------------------------------------------------------------------------------
 Azure funtions apps
 network watcher
 light house
