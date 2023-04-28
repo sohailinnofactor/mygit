@@ -84,7 +84,7 @@ Azure migrate
 WAF
 AKV
 Application insight
-Azure Arc
+
 
 -----------------------------------------------------------------------------------------------
 
@@ -124,7 +124,12 @@ light house
 
 connection monitring
 law saved quesries
+
+New topics to be checked
+
 resource graph explorer
+Azure Automanage
+Azure Arc
 
 
 

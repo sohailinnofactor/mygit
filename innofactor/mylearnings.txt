@@ -132,7 +132,7 @@ Finally sab chal gaya :) ye procedure rahega to run devops pipeline
 1. code likho
 2. azure git repo banao and usko clone karlo(set origin karke b push kar sakte hai)
 3. code push karlo
-4. service priciple create karlo and uska info as variable group devops pipeline
+4. service priciple create karlo and uska info(ClientId,DeploymentPassword,SubscriptionId,TenantId) as variable group devops pipeline
 library me add karlo
 
 https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/service_principal_client_secret
