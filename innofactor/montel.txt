@@ -77,6 +77,14 @@ log analytics workspace+queries
 ----------------------------------------------------------------------------------------------
 Azure FW 
 
+finally FW full speed my daud raha hai, ye procedure follow karo :
+
+1. create vnet\subnet for hub and spoke
+2. hub<-->spoke peering , spoke to spoke no peering
+3. create route table for every subnet to point traffic towards virtual appliace(FW) and attach it to respective subnet
+4. ensure to diable route propagation (detail me padho)
+5. dnat rule kaam kiya tha for RDP when there was no inbound allow for RDP in NSG(check ke FW priority vs NSG priorty ka kya chakkar hai)
+6. read about priority in FW and NSG in detail
 
 
 ----------------------------------------------------------------------------------------------
