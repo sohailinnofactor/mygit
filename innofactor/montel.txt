@@ -1,7 +1,7 @@
 topics to be deep dive in
 
 DC and DNS architecture - Aidan
-network architecture
+
 
 
 -------------------------------------------------------------------------------------------------
@@ -69,13 +69,33 @@ s2s vpn
 
 --------------------------------------------------------------------------------------------
 
-log analytics workspace+queries
+log analytics workspace
 
-| where SourceIP contains "10.100.10.229"
-| where Action contains "allow"
+same LAW can handle operational logs from Azure Monitor, azure sentinel and defender
+LAW per region can save data trasnmission cost
+LAW should pe specific to each tenant because resurce from same tenant can inject logs to LAW
+by default logs stored for 90 days
+
+1. what is the default retention period of logs like activity log,resource log,storage account logs or NSG flow logs
+90 days, but on LAW we can set based on our requirement and NSG flow logs is usually kept for 3 days max
+
+2. does LAW require storage to be linked or it manages storage by its own
+No it does not require storage account to be created, azure manages injections in LAW to TB
+
+3. NSG flow log retentions vs analytics
+3 days and for analytics logs are pushed to LAW
+
+4. how azure monitor is integrated with LAW to pull data
+Not yet clarified
+
+5. Agnets MMA,AMA
+to push logs to defined LAW
+
+6. usecases to export log from LAW to storage account or event hub
+nothing as such in montel
 
 ----------------------------------------------------------------------------------------------
-Azure FW 
+network hub and spoke architecture with Azure FW 
 
 finally FW full speed my daud raha hai, ye procedure follow karo :
 
@@ -111,7 +131,7 @@ self hosted vs azure cloud agent for devops
 application proxy
 managed identity
 
-MS defender
+Azure defender
 
 ---------------------------------------------------------------------------------------
 
@@ -138,6 +158,7 @@ New topics to be checked
 resource graph explorer
 Azure Automanage
 Azure Arc
+Azure sentinel
 
 
 

@@ -146,3 +146,7 @@ setx ARM_SUBSCRIPTION_ID 4cce77b1-65bc-4255-9570-07178450d61f
 
 terraform state list | findstr "vm"
 
+-----------------------------------------------------------------
+
+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
+
