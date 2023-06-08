@@ -150,13 +150,17 @@ Internet Key Exchange version 2 (IKEv2)
 
 Site-to-Site VPN
 
-1. create virtual network GW and attached it to vnet
+1. create virtual network GW and attached it to vnet and a public ip
 2. configure local network GW that holds info about onprem public\CIDR & PSK(preshared key)
 3. confgure connection in VNGW and attach it to LNGW
 4. configure on-prem router with ikev2 vpn tunnel and add azure public\CIDR & PSK
 5. Both side should have publically routable static IP
 6. if you have multiple vnet then create peering connection while using existing VNGW
 7. add new vnet CIDR details in on-prem router to start routing packets to new CIDR
+
+awesome blogpost explaining virtual network gateway with p2s,s2s and ER circuit
+
+https://blog.cloudtrooper.net/2023/02/06/virtual-network-gateways-routing-in-azure/
 
 Azure virtual WAN :
 

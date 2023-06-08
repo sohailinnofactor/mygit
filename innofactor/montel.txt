@@ -161,12 +161,6 @@ Azure Arc
 Azure sentinel
 
 -----------------------------------------------------------------------------------------
-registered app for vdc deployement through devops 
-
-$env:ARM_TENANT_ID = "6098724f-f53d-42d1-9d65-20cae598af29"
-$env:ARM_CLIENT_ID = "2dfd80c9-771a-487c-b267-6f9ee0f0cb08"
-$env:ARM_CLIENT_SECRET = "I6K8Q~TI~CtOqm-e25zGO4_jUD9BlAU6Cg9WsbnC"
-$env:ARM_SUBSCRIPTION_ID = "d43957b7-3a7f-471a-ad8c-f8aac64497ce"
 
 
 

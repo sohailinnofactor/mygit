@@ -164,7 +164,11 @@ az logout
 az login --allow-no-subscriptions --tenant "<tenant id on which you want to work>"
 az account list -o table --all --query "[].{TenantID: tenantId, Subscription: name, Default: isDefault}"
 az account set --subscription '<subs id on which you want to work>'
-then set below env variables 
+az account list -o table --all --query "[].{TenantID: tenantId, Subscription: name, Default: isDefault}"
+
+-------------------------------------------------
+
+NA : then set below env variables 
 
 $env:ARM_TENANT_ID = "tenantid"
 $env:ARM_CLIENT_ID = "apps client id"
@@ -173,6 +177,7 @@ $env:ARM_SUBSCRIPTION_ID = "subs id to work on"
 
 Get-Childitem env:
 
+------------------------------------------------
 detailed approach documented here :
 
 https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/guides/azure_cli
