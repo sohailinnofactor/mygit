@@ -160,6 +160,14 @@ Azure Automanage
 Azure Arc
 Azure sentinel
 
+---------------------------------------------------------------------------------------------
+
+azure devops self hosted agent 
+
+https://www.coachdevops.com/2023/01/how-to-setup-self-hosted-linux-agent-in.html
+
+
+
 -----------------------------------------------------------------------------------------
 
 
