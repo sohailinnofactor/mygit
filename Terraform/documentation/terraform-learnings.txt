@@ -58,7 +58,7 @@ terraform plan - read code and diplay what to add\delete
 fmt - format code
 destroy -target resource_type.localresourcename
 state file - contains latest state deployed through tf and imp to keep backup
-terraform refresh --- for refrehing state file and synciny current state
+terraform refresh --- for refrehing state file to sync changes from GUI, eg if you have deleted some resource from GUI and that has to be updated in tfstate so refresh it keep both in sync or else you have to manually delete those resources from tfstate
 terraform apply -auto-approve ... so you dont have to say yes seperately
 terraform validate -- validates syntax and variable defination
 ________________________________________________________________________________

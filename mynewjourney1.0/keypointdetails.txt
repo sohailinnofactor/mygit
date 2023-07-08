@@ -1,6 +1,8 @@
 topics to be deep dive in
 
-DC and DNS architecture - Aidan
+DC and DNS architecture 
+
+AZ FW will be used as central DNS forwareder system where FW policy DNS config will have ip address of DNS hosted DC either 
 
 
 
